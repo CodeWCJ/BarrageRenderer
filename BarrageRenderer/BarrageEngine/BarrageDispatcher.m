@@ -163,6 +163,9 @@
     {
         for (NSInteger i = 0; i < _deadSprites.count; i++) { // 活跃精灵队列
             BarrageSprite * sprite = [_deadSprites objectAtIndex:i];
+            if (sprite.deleteOnNextLoop) {
+                continue;
+            }
             if (sprite.delay > currentTime) {
                 [_waitingSpriteQueue addSprite:sprite];
                 [_deadSprites removeObjectAtIndex:i--];

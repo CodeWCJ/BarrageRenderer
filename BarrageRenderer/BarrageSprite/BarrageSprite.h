@@ -78,6 +78,9 @@ extern NSString * const kBarrageRendererContextTimestamp;     // 时间戳
 /// 强制性大小,默认为CGSizeZero,大小自适应; 否则使用mandatorySize的值来设置view大小
 @property(nonatomic,assign)CGSize mandatorySize;
 
+/// 删除弹幕的标记，删除弹幕不立即删除，需要播放完这次循环，下次循环才删除
+@property (nonatomic, assign) BOOL deleteOnNextLoop;
+
 #pragma mark - called, part of lifecycle
 
 /// 结合相关上下文激活精灵; 如要覆盖, 请要先调用super方法

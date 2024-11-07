@@ -108,6 +108,9 @@ typedef NS_ENUM(NSInteger, BarrageSpriteStage) {
 /// 移除标识符为 identifier 的弹幕
 - (void)removeSpriteWithIdentifier:(NSString *)identifier;
 
+/// 下次循环时在移除这标识符为 identifier 的弹幕
+- (void)removeSpriteOnNextLoopWithIdentifier:(NSString *)identifier;
+
 /// 逻辑时间,露出参考.
 @property(nonatomic,assign,readonly)NSTimeInterval time;
 

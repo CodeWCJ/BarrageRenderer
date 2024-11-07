@@ -259,6 +259,16 @@ NSString * const kBarrageRendererContextTimestamp = @"kBarrageRendererContextTim
     }
 }
 
+/// 下次循环时在移除这标识符为 identifier 的弹幕
+- (void)removeSpriteOnNextLoopWithIdentifier:(NSString *)identifier {
+    for (BarrageSprite * sprite in _dispatcher.activeSprites) {
+        if ([sprite.viewParams[@"identifier"] isEqualToString:identifier]) {
+            sprite.deleteOnNextLoop = YES;
+            break;
+        }
+    }
+}
+
 #pragma mark - record
 /// 此方法会修改desriptor的值
 - (void)recordDescriptor:(BarrageDescriptor *)descriptor
