@@ -25,6 +25,7 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import "BarrageSpriteQueue.h"
 
 @class BarrageSprite;
 @class BarrageDispatcher;
@@ -56,6 +57,9 @@
 
 /// 当前活跃的精灵.
 @property (nonatomic,strong,readonly)NSArray * activeSprites;
+
+/// 当前等待的精灵.
+@property (nonatomic,strong,readonly)BarrageSpriteQueue * waitingSpriteQueue;
 
 /// 停止当前被激活的精灵
 - (void)deactiveAllSprites;

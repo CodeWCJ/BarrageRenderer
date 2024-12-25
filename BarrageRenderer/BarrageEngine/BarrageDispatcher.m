@@ -26,7 +26,7 @@
 
 #import "BarrageDispatcher.h"
 #import "BarrageSprite.h"
-#import "BarrageSpriteQueue.h"
+
 
 @interface BarrageDispatcher()
 {
