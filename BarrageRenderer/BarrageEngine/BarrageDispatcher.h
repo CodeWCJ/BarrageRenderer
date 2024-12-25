@@ -56,10 +56,13 @@
 @property (nonatomic,assign)BOOL cacheDeadSprites;
 
 /// 当前活跃的精灵.
-@property (nonatomic,strong,readonly)NSArray * activeSprites;
+@property (nonatomic,strong,readonly)NSMutableArray * activeSprites;
 
 /// 当前等待的精灵.
 @property (nonatomic,strong,readonly)BarrageSpriteQueue * waitingSpriteQueue;
+
+/// 当前过期的精灵.
+@property (nonatomic,strong,readonly)NSMutableArray * deadSprites;
 
 /// 停止当前被激活的精灵
 - (void)deactiveAllSprites;

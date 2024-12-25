@@ -268,6 +268,18 @@ NSString * const kBarrageRendererContextTimestamp = @"kBarrageRendererContextTim
             break;
         }
     }
+    for (BarrageSprite * sprite in _dispatcher.activeSprites) {
+        if ([sprite.viewParams[@"identifier"] isEqualToString:identifier]) {
+            sprite.deleteOnNextLoop = YES;
+            break;
+        }
+    }
+    for (BarrageSprite * sprite in _dispatcher.deadSprites) {
+        if ([sprite.viewParams[@"identifier"] isEqualToString:identifier]) {
+            sprite.deleteOnNextLoop = YES;
+            break;
+        }
+    }
 }
 
 #pragma mark - record
