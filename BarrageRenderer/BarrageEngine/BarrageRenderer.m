@@ -261,7 +261,8 @@ NSString * const kBarrageRendererContextTimestamp = @"kBarrageRendererContextTim
 
 /// 下次循环时在移除这标识符为 identifier 的弹幕
 - (void)removeSpriteOnNextLoopWithIdentifier:(NSString *)identifier {
-    for (BarrageSprite * sprite in _dispatcher.activeSprites) {
+    NSArray *sprites = [_dispatcher.waitingSpriteQueue ascendingSprites];
+    for (BarrageSprite * sprite in sprites) {
         if ([sprite.viewParams[@"identifier"] isEqualToString:identifier]) {
             sprite.deleteOnNextLoop = YES;
             break;
